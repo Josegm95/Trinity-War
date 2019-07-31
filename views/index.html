@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trinity War</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="modal" class="hide">
+      <div class="modal-container">
+        <header class="modal-title-container">
+          <span id="modal-title">Modal Title</span>
+        </header>
+        <div class="modal-content">
+          <p id="modal-message">Jose te ha retado a un duelo</p>
+          <div>
+            <button id="modal-acept" class="hide">Aceptar</button>
+            <button id="modal-reject" class="hide">Rechazar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="login" id="login">
+      <h1>Bienvenido A Trinity War</h1>
+      <label for="name" class="login-item">Ingrese su Nombre</label>
+      <input type="text" id="name" class="login-item" />
+      <p class="hide" id="login-error"></p>
+      <button class="login-item" id="login-button">Entrar</button>
+    </section>
+
+    <section class="hide" id="chat-room">
+      <div class="chat">
+        <div class="messages-container" id="messages-container"></div>
+        <div class="input-chat">
+          <input type="text" id="message" />
+          <button id="send-message">Enviar</button>
+        </div>
+      </div>
+      <div class="users-container">
+        <h2>Usuarios Conectados</h2>
+        <div class="users" id="users"></div>
+      </div>
+    </section>
+
+    <section class="hide" id="selection">
+      <h2 class="title">Elige tus Heroes para el combate</h2>
+      <div class="heroes-container">
+        <article class="hero" id="tank">
+          <h3>Tank</h3>
+          <img src="img/tank.png" />
+        </article>
+        <article class="hero" id="warrior">
+          <h3>Warrior</h3>
+          <img src="img/warrior.png" />
+        </article>
+        <article class="hero" id="wizard">
+          <h3>Wizard</h3>
+          <img src="img/wizard.png" />
+        </article>
+        <article class="hero" id="healer">
+          <h3>Healer</h3>
+          <img src="img/healer.png" />
+        </article>
+      </div>
+      <p class="hide" id="selection-error"></p>
+      <button id="choose-heroes">Preparado</button>
+    </section>
+
+    <section class="hide" id="game">
+      <img src="img/map.jpg" class="background-img" />
+      <div class="map-container">
+        <span class="title-turn" id="game-message"></span>
+        <div class="map">
+          <div class="player-container">
+            <div class="player-heroe">
+              <div>
+                <span id="class-p1h1"></span>
+              </div>
+              <div>
+                <span>HP: </span>
+                <span id="hp-p1h1"></span>
+              </div>
+              <div>
+                <span>Attack: </span>
+                <span id="atk-p1h1"></span>
+              </div>
+              <div>
+                <span>Defense: </span>
+                <span id="def-p1h1"></span>
+              </div>
+              <img src="" id="img-p1h1" />
+            </div>
+            <div class="player-heroe left">
+              <div>
+                <span id="class-p1h2"></span>
+              </div>
+              <div>
+                <span>HP: </span>
+                <span id="hp-p1h2"></span>
+              </div>
+              <div>
+                <span>Attack: </span>
+                <span id="atk-p1h2"></span>
+              </div>
+              <div>
+                <span>Defense: </span>
+                <span id="def-p1h2"></span>
+              </div>
+              <img src="" id="img-p1h2" />
+            </div>
+          </div>
+          <div class="player-container">
+            <div class="player-heroe right">
+              <div>
+                <span id="class-p2h1"></span>
+              </div>
+              <div>
+                <span>HP: </span>
+                <span id="hp-p2h1"></span>
+              </div>
+              <div>
+                <span>Attack: </span>
+                <span id="atk-p2h1"></span>
+              </div>
+              <div>
+                <span>Defense: </span>
+                <span id="def-p2h1"></span>
+              </div>
+              <img src="" id="img-p2h1" />
+            </div>
+            <div class="player-heroe">
+              <div>
+                <span id="class-p2h2"></span>
+              </div>
+              <div>
+                <span>HP: </span>
+                <span id="hp-p2h2"></span>
+              </div>
+              <div>
+                <span>Attack: </span>
+                <span id="atk-p2h2"></span>
+              </div>
+              <div>
+                <span>Defense: </span>
+                <span id="def-p2h2"></span>
+              </div>
+              <img src="" id="img-p2h2" />
+            </div>
+          </div>
+        </div>
+        <div class="console">
+          <button id="attack">Atacar</button>
+          <button id="defense">Defender</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

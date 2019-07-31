@@ -1,0 +1,16 @@
+{
+  "name": "trinity-war",
+  "version": "1.0.0",
+  "description": "rpg turn game with socket.io",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "@Josegm95",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.2.0"
+  }
+}
