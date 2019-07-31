@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 // eslint-disable-next-line no-undef
-const socket = io('localhost:3000');
+const socket = io('https://trinity-war.herokuapp.com');
 const heroes = [];
 let myName = '';
 let playerNumber = 0;
