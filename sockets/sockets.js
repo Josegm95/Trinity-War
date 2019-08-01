@@ -13,18 +13,18 @@ const Sockets = (io) => {
   const warrior = {
     class: 'warrior',
     hp: 100,
-    atk: 10,
+    atk: 40,
     def: 20,
   };
   const wizard = {
     class: 'wizard',
     hp: 100,
-    atk: 10,
+    atk: 50,
     def: 10,
   };
   const healer = {
     class: 'healer',
-    hp: 100,
+    hp: 150,
     atk: 10,
     def: 10,
   };

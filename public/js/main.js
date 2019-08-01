@@ -5,7 +5,6 @@ const heroes = [];
 let myName = '';
 let playerNumber = 0;
 let mygame = [];
-let attackNumber = 0;
 
 document.getElementById('login-button').addEventListener('click', () => {
   const name = document.getElementById('name').value;
@@ -201,7 +200,6 @@ function updateHero(player, heroe) {
 }
 
 function updateGame() {
-  console.log(mygame);
   updateHero(1, 1);
   updateHero(1, 2);
   updateHero(2, 1);
