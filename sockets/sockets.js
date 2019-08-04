@@ -40,9 +40,19 @@ const Sockets = (io) => {
     }
   }
 
-  const allHeroes = {
-    tank: new Tank(), warrior: new Warrior(), wizard: new Wizard(), healer: new Healer(),
-  };
+  function createHero(name) {
+    let heroe = null;
+    if (name === 'tank') {
+      heroe = new Tank();
+    } else if (name === 'warrior') {
+      heroe = new Warrior();
+    } else if (name === 'wizard') {
+      heroe = new Wizard();
+    } else if (name === 'healer') {
+      heroe = new Healer();
+    }
+    return heroe;
+  }
 
   io.on('connection', (socket) => {
     socket.on('check user', (name, callback) => {
@@ -103,7 +113,7 @@ const Sockets = (io) => {
     socket.on('chosen heroes', (heroesNames, callback) => {
       const heroes = [];
       heroesNames.forEach((heroe) => {
-        const h = allHeroes[heroe];
+        const h = createHero(heroe);
         heroes.push(h);
       });
       games[socket.game][socket.player] = heroes;
