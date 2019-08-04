@@ -4,33 +4,44 @@ const Sockets = (io) => {
   const inGame = [];
   const games = [];
 
-  const tank = {
-    class: 'tank',
-    hp: 100,
-    atk: 10,
-    def: 50,
-  };
-  const warrior = {
-    class: 'warrior',
-    hp: 100,
-    atk: 40,
-    def: 20,
-  };
-  const wizard = {
-    class: 'wizard',
-    hp: 100,
-    atk: 50,
-    def: 10,
-  };
-  const healer = {
-    class: 'healer',
-    hp: 150,
-    atk: 10,
-    def: 10,
-  };
+  class Tank {
+    constructor() {
+      this.class = 'tank';
+      this.hp = 100;
+      this.atk = 10;
+      this.def = 50;
+    }
+  }
+
+  class Warrior {
+    constructor() {
+      this.class = 'warrior';
+      this.hp = 100;
+      this.atk = 40;
+      this.def = 20;
+    }
+  }
+
+  class Wizard {
+    constructor() {
+      this.class = 'wizard';
+      this.hp = 100;
+      this.atk = 50;
+      this.def = 10;
+    }
+  }
+
+  class Healer {
+    constructor() {
+      this.class = 'healer';
+      this.hp = 150;
+      this.atk = 10;
+      this.def = 10;
+    }
+  }
 
   const allHeroes = {
-    tank, warrior, wizard, healer,
+    tank: new Tank(), warrior: new Warrior(), wizard: new Wizard(), healer: new Healer(),
   };
 
   io.on('connection', (socket) => {
